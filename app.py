@@ -46,8 +46,24 @@ def download_audio(link):
     print("Download is completed successfully")
 
 
+def mainMenu():
+    while True:
+        answer = input("Choose the format:\n"
+        "1 - Video (mp4)\n"
+        "2 - Audio (mp3)\n"
+        "3 - Exist\n"
+        "Enter the number or type the format (mp4 or mp3):\n")
 
+        if(answer =="1" or answer =="mp4"):
+            link = input("Enter the YouTube video URL: ")
+            download_video(link)
+        elif (answer == "2" or answer =="mp3"):
+            link = input("Enter the YouTube video URL: ")
+            download_audio(link)
+        elif (answer == "exist"):
+            break
+        else:
+            print("Unknown command")
 
-link = input("Enter the YouTube video URL: ")
-download_audio(link)
-#download_video(link)
+if __name__ == "__main__":
+    mainMenu()
